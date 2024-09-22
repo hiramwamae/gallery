@@ -14,7 +14,7 @@ pipeline{
                 sh 'node --version'
             }
         }
-        stage('Install Required Softwares'){
+        stage('Install Dependencies'){
             steps{
                 sh 'npm install'
             }
