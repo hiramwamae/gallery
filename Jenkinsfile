@@ -9,15 +9,11 @@ pipeline{
                 git branch: 'master', url: 'https://github.com/hiramwamae/gallery'
             }
         }
-    }
-    stages{
         stage('Install Dependencies'){ //install Node.Js dependencies
             steps{
                 sh 'npm install'
             }
         }
-    }
-    stages{
         stage('Test'){ //run serverTest.js
             steps{
                 sh 'npm test'
