@@ -4,13 +4,11 @@ pipeline{
         nodejs 'node'
     }
     stages{
-        stage('Clone repo'){
-           steps{
-               git(
-                   git branch: 'master', url: 'https://github.com/hiramwamae/gallery'
-               )
-           }
-       }
+        stage('cloning code'){
+                steps{
+                    git branch: 'master', url: 'https://github.com/hiramwamae/gallery'
+                }
+        }
         stage('Check Version'){
             steps{
                 sh 'node --version'
