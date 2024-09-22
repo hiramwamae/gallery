@@ -4,14 +4,9 @@ pipeline{
         nodejs 'node'
     }
     stages{
-        stage('Install Dependencies'){
+        stage('Install Dependencies'){ //express,body-parser,mongoose
             steps{
                 sh 'npm install'
-            }
-        }
-        stage('Deploy Local'){
-            steps{
-                sh 'node server'
             }
         }
     }
