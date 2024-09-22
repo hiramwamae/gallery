@@ -5,9 +5,9 @@ pipeline{
     }
     stages{
         stage('cloning code'){
-                steps{
-                    git branch: 'master', url: 'https://github.com/hiramwamae/gallery'
-                }
+            steps{
+                git branch: 'master', url: 'https://github.com/hiramwamae/gallery'
+            }
         }
         stage('Check Version'){
             steps{
