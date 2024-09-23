@@ -14,6 +14,11 @@ pipeline{
                 sh 'npm install'
             }
         }
+        stage('Build'){ //Run Build process
+            steps{
+                sh 'npm run'
+            }
+        }
         stage('Test'){ //run serverTest.js
             steps{
                 sh 'npm test'
