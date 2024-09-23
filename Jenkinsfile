@@ -5,6 +5,7 @@ pipeline{
     }
     environment{
         SLACK_CHANNEL ='hiram_ip1'
+        RENDER_URL ='https://gallery-91ye.onrender.com'
     }
     stages{
         stage('Checkout'){ //Checkout code from Git repository
@@ -30,12 +31,10 @@ pipeline{
     }
     post{
         success {
-                //define render URL
-                def renderURL = 'https://gallery-91ye.onrender.com'
                 slackSend(
                     channel: env.SLACK_CHANNEL,
                     color: 'good',
-                    message: "Build ${env.BUILD_NUMBER} was successfully deployed to Render.com!\n view app at: ${renderURL}"
+                    message: "Build ${env.BUILD_NUMBER} was successfully deployed to Render.com!\n view app at: ${env.RENDER_URL}"
                 )
             }
         failure{
